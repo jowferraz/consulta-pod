@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  form(action="." method="POST")
+    label(for="pod") Pod:
+    input(
+      type="text"
+      id="pod"
+      name="pod"
+    )
+
+    input(
+      type="submit"
+      value="Submit"
+      class="btn btn-lg btn-primary btn-block"
+    )
