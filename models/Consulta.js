@@ -7,4 +7,7 @@ const consultaSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('Consulta', consultaSchema);
+
+const Consulta = mongoose.model('Consulta', consultaSchema);
+
+//module.exports = mongoose.model('Consulta', consultaSchema);
