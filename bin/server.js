@@ -1,6 +1,10 @@
-const app = require('../src/app');
+const app = require('../app');
 const http = require('http');
 const debug = require('debug')('nodestr:server');
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+app.use(bodyParser.urlencoded({ extended: true }))
 
 function normalizePort(val) {
     const port = parseInt(val, 10);

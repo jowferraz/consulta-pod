@@ -7,31 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Database
-mongoose.connect('mongodb+srv://admin:admin@cluster0-mezuk.gcp.mongodb.net/test?retryWrites=true&w=majority');
-
-const db = mongoose.connection;
-
-db.on('connected', () => {
-    console.log('Mongoose default connection is open');
-});
-
-db.on('error', err => {
-    console.log(`Mongoose default connection has occured \n${err}`);
-});
-
-db.on('disconnected', () => {
-    console.log('Mongoose default connection is disconnected');
-});
-
-process.on('SIGINT', () => {
-    db.close(() => {
-        console.log(
-            'Mongoose default connection is disconnected due to application termination'
-        );
-        process.exit(0);
-    });
-});
-
+const Consulta = require("./models/Consulta");
 
 // PUG
 app.set('views', path.join(__dirname, 'src/views'));

@@ -1,13 +1,9 @@
 const mongoose = require('mongoose');
 
 const consultaSchema = new mongoose.Schema({
-    pod: {
-        type: String,
-        trim: true,
-    },
+    _id: mongoose.Schema.Types.ObjectId,
+    pod: String
 });
 
 
-const Consulta = mongoose.model('Consulta', consultaSchema);
-
-//module.exports = mongoose.model('Consulta', consultaSchema);
+module.exports = mongoose.model("Consulta", consultaSchema);
